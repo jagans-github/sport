@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="sport.ico">
+    <title>Sport-SignUp</title>
+</head>
+<body class="signup">
+    <div class="signup-div">
+
+        <header>
+            <div class="sport">
+            <a href="index.html" id="logo">Sport</a>
+        </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="service.html">Services</a>
+                <a href="aboutus.html">AboutUs</a>
+                <a href="login.html">Login</a>
+            </nav>
+        </header>
+
+        <!-- <div class="sport">
+            <a href="index.html" id="logo"><i class="fa-regular fa-volleyball"></i>Sport</a>
+        
+    <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li> <a href="service.html">Services</a></li>
+        <li><a href="aboutus.html">AboutUs</a></li>
+        <li><a href="login.html">Login</a></li>
+    </ul>
+    </div> -->
+    <hr>
+    <div class="signup-form">
+    <!-- <form action=""> -->
+        <h2 class="head2">Signup</h2>
+        <!-- <div>
+            <label for="photo">Photo</label>
+            <img src="dog.jpg" alt="">
+        </div> -->
+        <div>
+            <label for="">User Name</label>
+        <input type="text" placeholder="Enter your username"  onblur="onblurUsername()" onkeydown="onkeydownUsername()" onkeyup="onkeyupUsername()" class="float-right" id="username" >
+        <label for="" id="username-alert" style="display: none;">Enter minimum 3 characters</label>
+    </div>
+        <div>
+            <label for="">Password</label>
+        <input type="text" placeholder="Enter your Password" onblur="onblurPassword()" onkeyup="onkeyupPassword()" onkeydown="onkeydownPassword()" class="float-right"  id="password" >
+        <label for="" id="password-alert" style="display: none;">Enter minimum 8 characters</label>
+        
+    </div>
+    <div>
+        <label for="">Confirm Password</label>
+    <input type="text" placeholder="Confirm Password" onblur="onblurConfirmPassword()" onkeyup="onkeyupConfirmPassword()" onkeydown="onkeydownConfirmPassword()"  class="float-right" id="confirm-password"   >
+    <label for="" id="pass-match" style="display: none;">Password does not match</label>
+    </div>
+    <div>
+        <label for="">Email</label>
+        <input type="text" placeholder=" Enter Mail id" onblur="onblurEmail()" onkeypress="onkeypressEmail()" onkeyup="onkeyupEmail()" onkeydown="onkeydownEmail()" class="float-right" id="email" >
+        <label for="" id="email-alert" style="display: none;">Enter email</label>
+    </div>
+        <div>
+            <label for="">Phone Number</label>
+        <input type="number" placeholder=" Enter Phone Number" onblur="onblurPhone()" onkeyup="onkeyupPhone()" onkeydown="onkeydownPhone()" id="phone" class="float-right" >
+        <label for="" id="phone-alert" style="display: none;">Enter Minimum 10 numbers</label>
+    </div>
+    <!-- <div>
+        <label for="photo">Profile photo</label>
+        <input type="file" class="float-right">
+    </div> -->
+
+    <!-- <div > -->
+        <!-- <label for="Sex" >Sex</label>
+        <div class="radio">
+        <input type="radio"  name="gender" value="male">
+        <label for="Sex" class="sex">Male</label>
+        <input type="radio" name="gender" value="female" >
+        <label for="sex" class="sex">Female</label>
+        <input type="radio" name="gender" value="transgender">
+        <label for="sex" class="sex">Transgender</label>
+    </div> -->
+        <!-- </div> -->
+
+    <!-- <div>
+        <label for="Religion">Religion</label>
+        <input type="radio" name="religion">Hindu
+        <input type="radio" name="religion">Christians
+        <input type="radio" name="religion">Muslims
+        <input type="radio" name="religion">Others
+    </div> -->
+    <!-- <div>
+        <label for="Language">Choose Language</label>
+        <input type="checkbox">English
+        <input type="checkbox">Tamil
+        <input type="checkbox">Hindi
+        <input type="checkbox">Others
+    </div> -->
+    <div>
+        <label for="">Nationality</label>
+        <select name="" id="nationality" style="background-color: black; color:white;" placeholder="selectone" onchange="onchangeNationality()" >
+            <option value="" >select Nationality</option>
+            <option value="ind" id="india" >India</option>
+            <option value="pak" >Pakistan</option>
+            <option value="eng" >England</option>
+            <option value="us">USA</option>
+            <option value="can" >Canada</option>
+        </select>
+        <label for="" id="nationalityalert" style="display:none;">Not qualified</label>
+    </div>
+    <!-- <div>
+        <label for="abouts">About</label>
+        <textarea name="" id="" cols="30" rows="10" placeholder="About your self...."></textarea>
+    </div> -->
+    <!-- <input type="image" src="dog.jpg"> -->
+    <!-- <input type="submit">
+    <input type="reset"> -->
+    <div class="buttons">
+    <!-- <a href="index.html" id="back">Back</a> -->
+    <button type="submit" value="submit" onclick="formValidate()" id="submit">Submit</button>
+    <!-- <button type="reset" id="reset">Reset</button> -->
+    
+</div>
+    <!-- </form> -->
+</div>
+    
+
+
+<script>
+   
+        var username = document.getElementById('username');
+        var password = document.getElementById('password');
+        var confirmpassword = document.getElementById('confirm-password');
+        var email = document.getElementById('email');
+        var phone = document.getElementById('phone');
+        var nationality = document.getElementById('nationality');
+        var india = document.getElementById('india');
+    
+    
+        // var usernamevalue = document.getElementById('username').value;
+        // var passwordvalue = document.getElementById('password').value;
+        // var confirmpasswordvalue = document.getElementById('confirm-password').value;
+        // var emailvalue = document.getElementById('email').value;
+        // var phonevalue = document.getElementById('phone').value;
+        // var nationalityvalue = document.getElementById(' nationality').value;
+
+
+        var usernamealert = document.getElementById('username-alert');
+        var passwordalert = document.getElementById('password-alert');
+        var confirmpasswordalert = document.getElementById('pass-match');
+        var emailalert = document.getElementById('email-alert');
+        var phonealert = document.getElementById('phone-alert');
+        var nationalityalert = document.getElementById('nationalityalert');
+
+
+
+        function onkeyupUsername(){
+             if(username.value.length >= 3){
+                username.style = "border:1px solid green; background-color:green;";
+                usernamealert.style="display:none; color:red";
+            } else {
+                
+                console.log('uername.value');
+            }
+           
+        }
+
+
+        function onkeydownUsername(){
+            if(username.value.length <= 3){
+                username.style = "border:1px solid red;background-color:black; ";
+            } else{
+                console.log('uername.value');
+            }
+        }
+
+        
+
+        function onblurUsername(){
+            if(username.value.length <= 2){
+                username.style = "border:1px solid red; ";  
+                usernamealert.style="display:block; color:red";
+            }
+            else{
+               
+               username.style = "border:1px solid green;background-color:green;";
+               usernamealert.style="display:none;";
+            }
+        }
+
+        
+         
+        
+    
+    
+
+    
+
+
+        function onkeyupPassword(){
+
+        
+            if(password.value.length >= 8){
+                password.style = "border:1px solid green; background-color:green;";
+                passwordalert.style="display:none;";
+            } else{
+                // passwordalert.style="display:block; color:red";
+                console.log('password.value');
+            
+        } 
+    }
+    
+    
+    function onkeydownPassword(){
+            if(password.value.length <= 8){
+                password.style = "border:1px solid red;background-color:black; ";
+            } else{
+                console.log('password.value');
+            }
+        }
+
+
+        function onblurPassword(){
+            if(password.value.length <= 7){
+                password.style = "border:1px solid red; ";  
+                passwordalert.style="display:block; color:red";
+            }
+            else{
+               
+               password.style = "border:1px solid green;background-color:green;";
+               passwordalert.style="display:none;";
+            }
+        }
+
+
+
+        
+        function onkeyupConfirmPassword(){
+
+        
+            if(confirmpassword.value.length >= 8){
+                confirmpassword.style = "border:1px solid green; background-color:green;";
+                confirmpasswordalert.style="display:none;";
+            } else{
+    // passwordalert.style="display:block; color:red";
+                console.log('confirmpassword.value');
+
+            } 
+        }
+
+
+
+
+        function onkeydownConfirmPassword(){
+            if(confirmpassword.value.length <= 7){
+                confirmpassword.style = "border:1px solid red;background-color:black; ";
+            } else{
+                console.log('confirmpassword.value');
+            }
+        }
+
+
+
+
+
+
+
+        function onblurConfirmPassword(){
+        
+            if(confirmpassword.value == password.value){
+                
+                confirmpassword.style = "border:1px solid green; background-color:green;";
+                confirmpasswordalert.style="display:none; ";
+                
+            } else{
+                confirmpasswordalert.style="display:block; color:red";
+                confirmpassword.style = "border:1px solid red; ";
+                
+            }
+        } 
+
+
+
+        function onkeypressEmail(){
+            if(!email.value){
+                email.style = "border:1px solid red; background-color:black";
+                emailalert.style="display:none; ";
+            }else{
+                console.log('email.value')
+            }
+
+        }
+
+        function onblurEmail(){
+
+        if(email.value){
+            email.style = "border:1px solid green;background-color:green;";
+            emailalert.style="display:none; ";
+        }else {
+            email.style = "border:1px solid red; background-color:black";
+           emailalert.style="display:block; color:red";
+        }
+        }
+
+        // if(email.value == "@" && email.value == "."){
+       
+        //         email.style = "border:1px solid green;background-color:green;";
+        //         usernamealert.style="display:none; ";
+        
+        // } 
+        // else{
+        //    email.style = "border:1px solid red; background-color:black";
+        //    emailalert.style="display:block; color:red";
+        // }
+
+    
+
+
+
+
+        // if(phone.value){
+        //     if(phone.value.length >= 10){
+        //         phone.style = "border:1px solid green";
+        //         phonealert.style="display:none; color:red";
+        //     } else{
+        //         phonealert.style="display:block; color:red";
+                
+        //     }
+        // } else{
+        //    phone.style = "border:1px solid red";
+        // }
+
+
+
+
+        function onkeyupPhone(){
+             if(phone.value.length == 10){
+                phone.style = "border:1px solid green; background-color:green;";
+                phonealert.style="display:none; color:red";
+            } else {
+                
+                console.log('phone.value');
+            }
+           
+        }
+
+
+        function onkeydownPhone(){
+            if(phone.value.length < 10){
+                phone.style = "border:1px solid red;background-color:black; ";
+            } else{
+                console.log('phone.value');
+            }
+        }
+
+        
+
+        function onblurPhone(){
+            if(phone.value.length <= 9){
+                phone.style = "border:1px solid red; ";  
+                phonealert.style="display:block; color:red";
+            }
+            else{
+               
+                phone.style = "border:1px solid green;background-color:green;";
+                phonealert.style="display:none;";
+            }
+        }
+
+
+
+
+        function  onchangeNationality(){
+            if(nationality.value == "ind"){
+                nationality.style="border:1px solid green; background-color:green ;"
+                // india.style="background-color:green";
+                nationalityalert.style="display:none;"
+            }else{
+                nationality.style="border:1px solid red;";
+                nationalityalert.style="display:block;color:red;";
+            }
+        }
+
+
+
+
+        // if(username.value){
+        //     if(username.value.length >= 3){
+        //         username.style = "border:1px solid green";
+        //         usernamealert.style="display:none; color:red";
+        //     } else{
+        //         usernamealert.style="display:block; color:red";
+                
+        //     }
+        // } else{
+        //    username.style = "border:1px solid red";
+        // }
+
+
+    
+    </script>
+
+
+</body>
+</html>
+
