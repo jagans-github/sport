@@ -58,6 +58,8 @@ span{
     font-weight: bolder;
     text-decoration: underline;
 }
+.float-para p{
+    color:white;
 .button{
     margin-top: 20px;
     text-decoration: none;
