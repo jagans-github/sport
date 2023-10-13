@@ -1,6 +1,6 @@
 .landing-page{
     margin: 0;
-    background-image: url('../ground.jpg');
+    background-image: url('ground.jpg');
     height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
